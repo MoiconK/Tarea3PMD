@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ConversorDivisas</string>
+    <string name="cantidad_de_dinero">Cantidad de dinero</string>
+    <string name="introduce_el_dinero_en_euros">Introduce el dinero (en euros)</string>
+    <string name="yuanes">Yuanes ¥</string>
+    <string name="libras">Libras £</string>
+    <string name="d_lares">Dólares $</string>
+</resources>
