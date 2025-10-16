@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ConversorDivisas</string>
+    <string name="cantidad_de_dinero">Amount of money</string>
+    <string name="introduce_el_dinero_en_euros">Introduce the money (on euros)</string>
+    <string name="yuanes">Yuans ¥</string>
+    <string name="libras">Pounds £</string>
+    <string name="d_lares">Dolars $</string>
+</resources>
