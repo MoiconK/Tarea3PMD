@@ -1,6 +1,7 @@
 package com.example.conversordivisas;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,33 +16,25 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.conversordivisas.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { //Versión con databinding
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        //Declaro las variables para establecer el texto de resultado
-        TextView resultadoDinero = findViewById(R.id.dineroconvertido);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(
+                this,
+                R.layout.activity_main
+        );
 
         //Declaro los botones y sus listeners
-        Button botonDolares = (Button)findViewById(R.id.dolares_boton);
-        botonDolares.setOnClickListener(v -> {
-                    resultadoDinero.setText(convertirDolares()+"$");
+
+        binding.dolaresBoton.setOnClickListener(v -> {
+                    binding.dineroconvertido.setText(convertirDolares()+"$");
         });
-        Button botonLibras = (Button)findViewById(R.id.libras_boton);
-        botonLibras.setOnClickListener(v -> {
-            resultadoDinero.setText(convertirLibras()+"£");
+        binding.librasBoton.setOnClickListener(v -> {
+                binding.dineroconvertido.setText(convertirLibras()+"£");
         });
-        Button botonYuanes = (Button)findViewById(R.id.yuanes_boton);
-        botonYuanes.setOnClickListener(v -> {
-            resultadoDinero.setText(convertirYuanes()+"¥");
+        binding.yuanesBoton.setOnClickListener(v -> {
+                binding.dineroconvertido.setText(convertirYuanes()+"¥");
         });
 
     }

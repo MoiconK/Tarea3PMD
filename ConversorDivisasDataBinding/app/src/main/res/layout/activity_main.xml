@@ -9,9 +9,7 @@
     tools:context=".MainActivity">
     
     <data>
-        <variable
-            name=" "
-            type=" " />
+
     </data>
 
 <ImageView
